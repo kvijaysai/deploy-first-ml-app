@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Predict Insurance Bill</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Insurance Bill for Hospitalization</h1>
+
+     <!-- Form to enter new data for predictions  -->
+    <form action="{{ url_for('predict')}}"method="POST">
+	<table>
+		<tr>
+			<td colspan="2">
+			  <input type="text" name="age" placeholder="Age - Integer" required="required" size="50"/><br>
+			</td>
+		</tr>
+		  
+		<tr>
+			<td>
+			Gender
+			</td>
+			
+			<td>
+				<select name="sex" id="sex" placeholder="Sex" required="required">
+				  <option value="female">Female</option>
+				  <option value="male">Male</option>
+				</select> <br> 
+			</td>
+		
+		</tr>
+		
+		<tr>
+		
+			<td colspan="3">
+			<input type="text" name="bmi" placeholder="BMI - Number ideally 18.5 to 24.9" required="required" /><br>
+			</td>
+		</tr>
+			
+		<tr>
+			<td>
+			Children
+			</td>
+			
+			<td>
+				 <select name="children" id="children" placeholder="# Children" required="required">
+				  <option value="0">0</option>
+				  <option value="1">1</option>
+				  <option value="2">2</option>
+				  <option value="3">3</option>
+				  <option value="4">4</option>
+				  <option value="5">5</option>
+				</select> <br>
+			</td>
+			
+		</tr>
+			
+		<tr>
+			<td>
+			Smoker
+			</td>
+			
+			<td>
+				<select name="smoker" id="smoker" placeholder="Smoker" required="required">
+				  <option value="yes">Yes</option>
+				  <option value="no">No</option>
+				</select> <br> 
+			</td>
+			
+		</tr>
+			
+		<tr>
+			<td colspan="2" style="text-align:center">
+				<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+			</td>
+		</tr>
+	</table>
+        
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{pred}}
+
+</body>
+</html>
